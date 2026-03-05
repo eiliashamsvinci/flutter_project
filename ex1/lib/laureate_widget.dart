@@ -20,6 +20,8 @@ class LaureateWidget extends StatelessWidget {
         Text(
           "$firstname $surname",
           style: TextStyle(
+           backgroundColor: Colors.grey,
+
             fontSize: 20,
           ),
         ),
@@ -28,6 +30,7 @@ class LaureateWidget extends StatelessWidget {
 
         Text(
           motivation,
+
           textAlign: TextAlign.justify,
         ),
       ],

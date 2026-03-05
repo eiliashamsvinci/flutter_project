@@ -10,9 +10,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeScreen(),
+    return MaterialApp(
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
+
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+        ),
+        useMaterial3: true,
+      ),
     );
   }
 }
@@ -25,17 +32,27 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("HomeScreen"),
+        backgroundColor: Colors.lightBlue,
       ),
 
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: LaureateWidget(
-          firstname: laureate1["firstname"] ?? "",
-          surname: laureate1["surname"] ?? "",
-          motivation: laureate1["motivation"] ?? "",
+      body: const Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 20),
+
+            LaureateWidget(
+              firstname: "Al",
+              surname: "Gore",
+              motivation:
+              "For their efforts to build up and disseminate greater knowledge about man-made climate change...",
+            ),
+          ],
         ),
-      ),
-    );
+      )  ,
+    ) ;
+
   }
 }
 
